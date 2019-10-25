@@ -11,7 +11,7 @@ display: flex;
 justify-content: center;
 `
 
-const Img = styles.img`
+const img = styles.img`
 margin-left: 2%;
 `
 
@@ -21,6 +21,7 @@ export default function WelcomePage() {
       <header>
         <h1>Welcome to the ultimate fan site!</h1>
         <Link to="/Characters"><Buttons>Characters</Buttons></Link>
+        <Link to="/Search"><Buttons>Search</Buttons></Link>
         <img
           className="main-img"
           src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"

@@ -24,6 +24,7 @@ export default function CharacterList() {
   return (
     <section className="character-list">
       <Link to= "/"><button>Home</button></Link>
+      <Link to="/Search"><button>Search</button></Link>
       {character.map(ind => (
         <CharacterCard key={ind.id} name={ind.name} species={ind.species} status={ind.status} />
       ))}
