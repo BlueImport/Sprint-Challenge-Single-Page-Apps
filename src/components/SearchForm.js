@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import CharacterCard from "./CharacterCard";
 import { Link } from "react-router-dom";
 
 
@@ -10,7 +11,7 @@ export default function SearchForm() {
   
   useEffect(()=>{
     axios.get("https://rickandmortyapi.com/api/character/") 
-    .then (response =>{
+    .then (response => {
       const characters = response.data.results.filter(char => char.name.toLowerCase().includes(query.toLowerCase())
       );
       setData (characters);
@@ -24,17 +25,12 @@ export default function SearchForm() {
   return (
     <div >
       <form > 
-        <input
-        id="name" type="text" name="textfield" placeholder="Search" value={query} onChange={handleInputChange}/>
-  
-  
-  
-      <Link to="/"><button>Home
-            </button></Link>
+        <input id="name" type="text" name="textfield" placeholder="Search" value={query} onChange={handleInputChange}/>
+      <Link to="/"><button>Home</button></Link>
       </form>
 
     {data.map((char => {
-      return(<character key={char.id} name={char.name} species={char.species} status={char.status}/>)
+      return(<CharacterCard key={char.id} name={char.name} species={char.species} status={char.status}/>)
     }
     ))}
 

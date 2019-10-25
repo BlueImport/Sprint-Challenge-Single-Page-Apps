@@ -4,6 +4,7 @@ import styles from "styled-components";
 
 const Buttons = styles.button`
 margin 2%;
+color: dodgerblue;
 `
 
 const Page = styles.section`
